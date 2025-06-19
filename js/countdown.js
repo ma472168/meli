@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Easter egg animado usando <p id="easter-egg">
-    //
     const frases = ["sabias q soy un poyo bn guapo?", "SOY UNA GALGOLAAA", "sabias q soy muy bonito?", 
         "recuerda darle todo tu cariñito a cesarin", "tuviste un dia bonito hoy linda?", "d aki a friends o q",
         "te diria algo lindo pero le dices a mi poyo", "probablemente cuando estes leyendo esto este jugando lol NO JOKE JAJAJAJ",
@@ -89,6 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     egg.classList.add('fade-in');
                 }, 500);
             }, 5000);
-        }, 6000); // Espera 6 segundos antes de mostrar el easter egg
+        }, 10000); // Espera 10 segundos antes de mostrar el easter egg
     }
 });
