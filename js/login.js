@@ -15,4 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(mensaje);
         }
     });
+
+    // Easter egg: cambia la frase cada 5 segundos en el span con id 'easter-egg'
+    const frases = ["sabias que soy un poyo?", "AMARTE DUELEEEEE, nah q buena rola pa", "si"];
+    const egg = document.getElementById('easter-egg');
+    if (egg) {
+        let idx = 0;
+        setInterval(() => {
+            idx = (idx + 1) % frases.length;
+            egg.textContent = frases[idx];
+        }, 5000);
+    }
 });
