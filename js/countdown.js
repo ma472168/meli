@@ -88,6 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     egg.classList.add('fade-in');
                 }, 500);
             }, 5000);
-        }, 10000); // Espera 10 segundos antes de mostrar el easter egg
+        }, 10001); // Espera 10 segundos antes de mostrar el easter egg
     }
 });
