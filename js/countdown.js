@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "hola si buenas tardes, me da 2 promos de azules y unos boneless y unas papas ^_^","TRALALELO TRALALALLALALA",
         "cesarin vs foster, quien ganara?", "ya dile a mi suegro q este año es de mi azul","odio mi servicio social ojala ya se acabe",
         "hay q terminar d ver los videos de onecoin", "extraño a tu awelito, saludame a margarito", "extraño ir a ecatepec contigo :(",
-        "eres la mejor novia del mundo, del universo qn sabe"];
+        "eres la mejor novia del mundo, del universo qn sabe","tengo mucho sueño papu, son las 2 y aun sigo programando :("];
     const egg = document.getElementById('easter-egg');
     if (egg) {
         egg.textContent = ""; // Inicialmente vacío
