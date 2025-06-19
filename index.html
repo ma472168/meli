@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+    <script src="js/countdown.js" defer></script>
+    <script src="js/theme.js" defer></script>
+</head>
+
+<body>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="countdown-container">
+        <h1><strong>Feliz aniversario bonita, te amo.</strong></h1>
+        <br>
+        <p><small>Te dejo este temporizador para que sepas cuanto falta para que llegue el dia de nuestro aniversario,
+                espero que te guste y que lo disfrutes, te amo mucho.</small></p>
+        <div id="countdown">
+            <div id="days" class="countdown-item"></div>
+            <div id="hours" class="countdown-item"></div>
+            <div id="minutes" class="countdown-item"></div>
+            <div id="seconds" class="countdown-item"></div>
+            <div id="milliseconds" class="countdown-item"></div>
+        </div>
+        <button id="go-login-btn" style="margin-top:24px;width:100%;">abreme cuando sea el día</button>
+        <p id="login-error" class="error"></p>
+        <br>
+        <br>
+        <p> - dev by cesarin </p>
+    </div>
+</body>
+
+</html>
