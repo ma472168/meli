@@ -65,29 +65,38 @@ document.addEventListener('DOMContentLoaded', function () {
         "recuerda darle todo tu cariñito a cesarin", "tuviste un dia bonito hoy linda?", "d aki a friends o q",
         "te diria algo lindo pero le dices a mi poyo", "probablemente cuando estes leyendo esto este jugando lol NO JOKE JAJAJAJ",
         "hola si buenas tardes, me da 2 promos de azules y unos boneless y unas papas ^_^","TRALALELO TRALALALLALALA",
-        "cesarin vs foster, quien ganara?", "ya dile a mi suegro q este año es de mi azul"];
+        "cesarin vs foster, quien ganara?", "ya dile a mi suegro q este año es de mi azul","odio mi servicio social ojala ya se acabe",
+        "hay q terminar d ver los videos de onecoin", "extraño a tu awelito, saludame a margarito", "extraño ir a ecatepec contigo :(",
+        "eres la mejor novia del mundo, del universo qn sabe"];
     const egg = document.getElementById('easter-egg');
     if (egg) {
         egg.textContent = ""; // Inicialmente vacío
-        setTimeout(() => {
-            let frasesRestantes = [...frases];
-            let current = frasesRestantes.splice(Math.floor(Math.random() * frasesRestantes.length), 1)[0];
-            egg.textContent = current;
-            egg.classList.add('fade-in');
-            setInterval(() => {
-                egg.classList.remove('fade-in');
-                egg.classList.add('fade-out');
-                setTimeout(() => {
-                    if (frasesRestantes.length === 0) {
-                        frasesRestantes = [...frases];
-                    }
-                    const idx = Math.floor(Math.random() * frasesRestantes.length);
-                    current = frasesRestantes.splice(idx, 1)[0];
-                    egg.textContent = current;
-                    egg.classList.remove('fade-out');
-                    egg.classList.add('fade-in');
-                }, 500);
-            }, 5000);
-        }, 10001); // Espera 10 segundos antes de mostrar el easter egg
+        const start = Date.now();
+        function showEasterEgg() {
+            const elapsed = Date.now() - start;
+            if (elapsed >= 30000) { // 30 segundos para que se muestre el easter egg
+                let frasesRestantes = [...frases];
+                let current = frasesRestantes.splice(Math.floor(Math.random() * frasesRestantes.length), 1)[0];
+                egg.textContent = current;
+                egg.classList.add('fade-in');
+                setInterval(() => {
+                    egg.classList.remove('fade-in');
+                    egg.classList.add('fade-out');
+                    setTimeout(() => {
+                        if (frasesRestantes.length === 0) {
+                            frasesRestantes = [...frases];
+                        }
+                        const idx = Math.floor(Math.random() * frasesRestantes.length);
+                        current = frasesRestantes.splice(idx, 1)[0];
+                        egg.textContent = current;
+                        egg.classList.remove('fade-out');
+                        egg.classList.add('fade-in');
+                    }, 500);
+                }, 5000);
+            } else {
+                setTimeout(showEasterEgg, 100);
+            }
+        }
+        showEasterEgg();
     }
 });
