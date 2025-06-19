@@ -198,6 +198,28 @@ button:hover {
     display: none !important;
 }
 
+/* Animación fade-in para la descripción */
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.countdown-description {
+    opacity: 0;
+    animation: fadeInText 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Efecto máquina de escribir SIN cursor */
+.typewriter-text {
+    display: inline-block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    /* Elimina el borde/cursor */
+    border-right: none;
+    min-height: 1em;
+}
+
 /* Responsive mejorado para móviles */
 @media (max-width: 600px) {
     html, body {

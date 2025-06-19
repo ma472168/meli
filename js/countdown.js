@@ -49,7 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (finished) {
             window.location.href = "login.html";
         } else {
-            alert("aun falta tiempo para tu sorpresita bonita, te amo");
+            const mensajes = ["aun falta tiempo para tu sorpresita bonita, te amo",
+                              "aun no papu, pero dile a tu poyo q lo kieres.",
+                              "paciencia chikuela loka.",
+                              "ni q fueras uno d mis poyos pa incistirme tanto jasdjajsd :v.",
+                              "perate pues ni q fueran enchiladukis.",
+                              "ando en ohana baby, pero ahorita q se desbloque voy a mi casa JASJDJAJD.",];
+            const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+            alert(mensaje);
         }
     });
 });
