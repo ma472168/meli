@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function() {
     const letterContainer = document.getElementById("letter-container");
     
@@ -23,3 +24,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to create the letter
     createLetter();
 });
+*/

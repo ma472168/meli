@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+    try {
+      if (!window.localStorage || !localStorage.getItem('isLoggedIn')) {
+        window.location.replace('login.html');
+      }
+    } catch (e) {
+      window.location.replace('login.html');
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letter</title>
+    <title>Calta</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
-    <script src="js/letter.js" defer></script>
     <script src="js/theme.js" defer></script>
 </head>
 <body>
     <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     <div class="letter-container" id="letter-container">
-        <h1 class="letter-title">Dear Friend,</h1>
-        <p class="letter-content">
-            I hope this message finds you well. As we look forward to the future, I wanted to take a moment to express my gratitude for your friendship and support.
-        </p>
-        <p class="letter-content">
-            Together, we have shared many wonderful memories, and I am excited about the adventures that lie ahead.
-        </p>
-        <p class="letter-content">
-            Thank you for being a part of my journey. I look forward to creating more beautiful moments with you.
-        </p>
-        <p class="letter-signature">Warm regards,<br>Your Friend</p>
+        <h1 class="letter-title animate-fade-in" id="letter-title">Hola bonita,</h1>
+        <div id="letter-content">
+        </div>
+        <p class="letter-signature animate-signature" id="letter-signature" style="opacity:0;">Tu niño bonito,<br>cesarin</p>
+        <button class="gallery-btn" id="gallery-btn">Ver galería</button>
     </div>
+    <script>
+    // Animación de carta dinámica
+    const letterLines = [
+        "Aun no se q poner aqui ajsdjasjd, supongo luego lo uplodeao.",
+        "t amo, q haces leyendo el codigo chismosa"
+    ];
+    const contentDiv = document.getElementById('letter-content');
+    const signature = document.getElementById('letter-signature');
+    let line = 0;
+    function typeLine(text, i, cb) {
+        if (i < text.length) {
+            contentDiv.lastChild.textContent += text.charAt(i);
+            setTimeout(() => typeLine(text, i + 1, cb), 35);
+        } else {
+            cb();
+        }
+    }
+    function showNextLine() {
+        if (line < letterLines.length) {
+            const p = document.createElement('p');
+            p.className = 'letter-content animate-fade-in';
+            p.textContent = '';
+            contentDiv.appendChild(p);
+            typeLine(letterLines[line], 0, () => {
+                line++;
+                setTimeout(showNextLine, 400);
+            });
+        } else {
+            setTimeout(() => {
+                signature.style.transition = 'opacity 1.2s';
+                signature.style.opacity = 1;
+            }, 600);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', showNextLine);
+    // Botón galería
+    document.getElementById('gallery-btn').onclick = () => {
+        window.location.href = 'galleria.html';
+    };
+    </script>
 </body>
 </html>
