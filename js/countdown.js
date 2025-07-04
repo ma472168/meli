@@ -1,4 +1,4 @@
-const countdownDate = new Date("July 05, 2025 12:00:00").getTime();
+const countdownDate = new Date("July 09, 2025 12:00:00").getTime();
 
 let finished = false;
 
